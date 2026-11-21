@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="KCB's research in 3D reconstruction, measurement, and benchmarking.">
+  <title>KCB</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="previews.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="profile">
+      <h1>KCB</h1>
+      <p>I work on 3D reconstruction, measurement, and benchmarking. My current focus is parametric surface reconstruction and using Gaussian Splatting to reconstruct a field suited to geometry processing.</p>
+      <p class="profile-links">
+        <a href="https://github.com/KCBtheone">GitHub</a>
+        <span aria-hidden="true">/</span>
+        <a href="https://github.com/KCBtheone/research-manuscripts">Manuscripts</a>
+      </p>
+    </header>
+
+    <section aria-labelledby="research">
+      <h2 id="research">Research</h2>
+      <div class="papers">
+        <article>
+          <div>
+            <button class="paper-thumbnail" type="button" popovertarget="softgs-preview" aria-label="Enlarge SoftGS editing examples">
+              <img src="images/softgs.webp" width="692" height="320" alt="Microphone before and after a SoftGS edit">
+            </button>
+            <div class="paper-preview" id="softgs-preview" popover>
+              <img src="images/softgs-preview.webp" width="1312" height="1024" alt="Before-and-after SoftGS edits of a microphone, materials, a hotdog, drums, a ficus, and a ship">
+            </div>
+          </div>
+          <div>
+            <h3><a href="https://github.com/KCBtheone/research-manuscripts/releases/tag/softgs">SoftGS: A Structured Gaussian Representation for Controllable Non-Rigid Editing</a></h3>
+            <p class="paper-links">
+              <a href="https://github.com/KCBtheone/SoftGS">code</a>
+              <span aria-hidden="true">/</span>
+              <a href="https://huggingface.co/datasets/KCB1/SoftBench">SoftBench dataset</a>
+            </p>
+            <p>SoftGS edits Gaussian scenes from a sparse set of 3D control pairs. A smooth deformation meets feasible targets exactly and updates each Gaussian's position, shape, and view-dependent appearance together. The same source operator can be reused for new target positions.</p>
+          </div>
+        </article>
+
+        <article>
+          <div>
+            <button class="paper-thumbnail" type="button" popovertarget="voxelatlas-preview" aria-label="Enlarge the VoxelAtlas teaser">
+              <img src="images/voxelatlas.webp" width="900" height="365" alt="VoxelAtlas teaser showing reconstructed surfaces, their parametric patches, and surface operations">
+            </button>
+            <div class="paper-preview" id="voxelatlas-preview" popover>
+              <img src="images/voxelatlas-preview.webp" width="2400" height="975" alt="Full VoxelAtlas teaser showing reconstructed surfaces, their parametric patches, and surface operations">
+            </div>
+          </div>
+          <div>
+            <h3><a href="https://github.com/KCBtheone/research-manuscripts/releases/tag/voxelatlas-manuscript">VoxelAtlas: Reconstructing Real-World Scenes as Parametric Surfaces</a></h3>
+            <p class="paper-links"><a href="https://huggingface.co/datasets/KCB1/VoxelAtlas">Hugging Face</a></p>
+            <p>VoxelAtlas reconstructs real scenes as connected parametric patches whose shared boundaries match exactly. The reconstructed surface itself supports curvature queries, CAD-style trimming, and relief edits.</p>
+          </div>
+        </article>
+
+        <article>
+          <div>
+            <button class="paper-thumbnail" type="button" popovertarget="lift-preview" aria-label="Enlarge the Lift teaser and 3D normal error comparisons">
+              <img src="images/lift.webp" width="840" height="242" alt="Normal-query errors at the same 3D locations after direct acquisition, render-only fitting, and fitting with anchoring">
+            </button>
+            <div class="paper-preview" id="lift-preview" popover>
+              <img src="images/lift-preview.webp" width="1624" height="1113" alt="Lift teaser comparing acquired and fitted normal renders and language responses above, with normal-query errors at the same 3D locations in Office 0 below">
+            </div>
+          </div>
+          <div>
+            <h3><a href="https://github.com/KCBtheone/research-manuscripts/releases/tag/lift">Rethinking 3D Attribute Fitting through Geometric Acquisition</a></h3>
+            <p class="paper-links"><a href="https://huggingface.co/KCB1/Lift">Hugging Face</a></p>
+            <p>Lift studies the effect of further fitting after directly mapping language, temperature, surface normals, and part labels onto 3D surfaces. Render-supervised fitting can improve image predictions while degrading the attributes queried at the same 3D locations.</p>
+          </div>
+        </article>
+
+        <article>
+          <div>
+            <button class="paper-thumbnail" type="button" popovertarget="splatatlas-preview" aria-label="Enlarge the SplatAtlas teaser">
+              <img src="images/splatatlas.webp" alt="Upper half of the SplatAtlas teaser comparing novel-view scores on Mip-NeRF 360 and Tanks and Temples">
+            </button>
+            <div class="paper-preview" id="splatatlas-preview" popover>
+              <img src="images/splatatlas-preview.webp" width="1800" height="1537" alt="Full SplatAtlas teaser with novel-view rankings above and Truck renders with Gaussian counts and attributes below">
+            </div>
+          </div>
+          <div>
+            <h3><a href="https://github.com/KCBtheone/research-manuscripts/releases/tag/splatatlas">SplatAtlas: A Reusable State-Level Benchmark for Gaussian Splatting</a></h3>
+            <p class="paper-links">
+              <a href="https://kcbtheone.github.io/SplatAtlas/">benchmark</a>
+              <span aria-hidden="true">/</span>
+              <a href="https://huggingface.co/datasets/KCBtheone/splatatlas-core">data</a>
+            </p>
+            <p>SplatAtlas evaluates 30 Gaussian Splatting methods on 31 scenes and releases trained scene states for reuse. Methods with similar novel-view scores can differ sharply in their Gaussian counts and shapes, and those differences show method-specific patterns across scenes.</p>
+          </div>
+        </article>
+
+        <article>
+          <img src="images/splatatlas-ir.webp" alt="SplatAtlas-IR overview of downstream tasks in robot simulation">
+          <div>
+            <h3>SplatAtlas-IR</h3>
+            <p class="paper-links"><a href="https://huggingface.co/datasets/KCBtheone/splatatlas-ir">Hugging Face</a></p>
+            <p>SplatAtlas-IR evaluates 11 Gaussian Splatting inverse-rendering methods on 46 scenes and includes simulated robot contact and pushing tasks. Errors in estimated surface normals at the target track whether the robot reaches the intended contact point.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
