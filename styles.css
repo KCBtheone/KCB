@@ -53,6 +53,17 @@ h1 {
   text-align: center;
 }
 
+.email-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1rem;
+}
+
+.profile-links + .profile-links {
+  margin-top: 0.25rem;
+}
+
 a {
   color: #1772d0;
   text-decoration: none;
@@ -79,12 +90,28 @@ h2 {
   font-weight: 400;
 }
 
+main > section + section {
+  margin-top: 2.25rem;
+}
+
+.research-heading {
+  margin-bottom: 1.2rem;
+}
+
+.research-heading h2 {
+  margin-bottom: 0.35rem;
+}
+
+.research-heading p {
+  color: #555;
+}
+
 .papers {
   display: grid;
   gap: 1.5rem;
 }
 
-article {
+.papers > article {
   display: grid;
   grid-template-columns: 10rem minmax(0, 1fr);
   align-items: center;
@@ -161,7 +188,7 @@ article p {
     margin-bottom: 1.7rem;
   }
 
-  article {
+  .papers > article {
     grid-template-columns: minmax(4.5rem, 24%) minmax(0, 1fr);
     align-items: start;
     gap: 0.8rem;
